@@ -1,0 +1,35 @@
+const fs=require('fs');
+//创建文件
+//覆盖写入
+/*fs.writeFile('name.txt','今天天气不错',(err)=>{
+  if(err){
+      console.log(err);
+  }else{
+      console.log('ok');
+  }
+});*/
+/*写入文件：追加写入*/
+/*fs.appendFile('name.txt','你好，Bobby!',(err)=>{
+  if(err){
+      console.log(err);
+  }else{
+      console.log('ok');
+  }
+});*/
+//读取文件
+/*fs.readFile('name.txt','utf8',(err,data)=>{
+    if(err){
+        console.log(err);
+    }else{
+        console.log(data);
+    }
+});*/
+
+//删除文件
+fs.unlink('name.txt',(err)=>{
+    if(err){
+        console.log(err);
+    }else{
+        console.log('ok');
+    }
+});
