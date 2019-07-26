@@ -16,19 +16,8 @@ app.use(bodyParser.json());
 /*路由*/
 const userRouter=require('./router/userRouter');
 app.use('/user',userRouter);
-/*发送邮箱验证码*/
-app.post('/getMailCode',(req,res)=>{
-    let {mail}=req.body;
-    let code=parseInt(Math.random()*10000);
-    Mail.send(mail,code)
-        .then(()=>{
-            res.send({err:0,msg:'ok'})
-        }).catch((err)=>{
-         res.send({err:-1,msg:'失败'+err})
-        });
 
-});
 /*监听3000端口，开启一个服务器*/
-app.listen(3000,()=>{
+app.listen(3001,()=>{
     console.log('server start ')
 })
